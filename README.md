@@ -2,6 +2,9 @@
 ## Powerful Code Insertion Platform for OS X
 
 ### What this fork adds
+
+**NOTE** Don't use yet
+
 This fork adds compatibility with Opee for those who do not want to patch Foundation and are comfortable using an unsigned kernel extension.
 
 Changes:
