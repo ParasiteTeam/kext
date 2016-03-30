@@ -24,4 +24,4 @@ If you have any support requests please feel free to email me at shinvou[at]gmai
 Otherwise, feel free to follow me on twitter: [@biscoditch](https:///www.twitter.com/biscoditch)!
 
 ### Special Thanks
-Thanks to [osxreverser](https://github.com/gdbinit). ATM I use userspace injection and kernel symbol solving from him.
+Thanks to [@osxreverser](https:///www.twitter.com/osxreverser). ATM I use slightly modified code (userspace injection/kernel solving) from his project [mario](https://github.com/gdbinit/mario).
