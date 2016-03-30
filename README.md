@@ -1,6 +1,17 @@
 # Parasite
 ## Powerful Code Insertion Platform for OS X
 
+### What this fork adds
+This fork adds compatibility with Opee for those who do not want to patch Foundation and are comfortable using an unsigned kernel extension.
+
+Changes:
+1. Sets the payload to the OpeeLoader.dylib trampoline.
+2. Uses LC_LOAD_WEAK_DYLIB so that apps do not crash if OpeeLoader.dylib is not present on the filesystem.
+3. Injects into all processes instead of the Dock
+
+Usage with Opee:
+Follow all the installation instructions on the Opee page except for the part using optool. Then load this kext.
+
 ### Intro
 Parasite allows you to change the expected behavior of apps and stuff. Sounds scary.
 
