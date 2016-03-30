@@ -6,7 +6,9 @@ This fork adds compatibility with Opee for those who do not want to patch Founda
 
 Changes:
 1. Sets the payload to the OpeeLoader.dylib trampoline.
+
 2. Uses LC_LOAD_WEAK_DYLIB so that apps do not crash if OpeeLoader.dylib is not present on the filesystem.
+
 3. Injects into all processes instead of the Dock
 
 Usage with Opee:
