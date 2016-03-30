@@ -8,12 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		1C8855F11C85B93B0089A8A4 /* Parasite.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C8855F01C85B93B0089A8A4 /* Parasite.c */; };
+		1CA504371CABECCF00AB695C /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504311CABECCF00AB695C /* config.h */; };
+		1CA504381CABECCF00AB695C /* kernel_symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CA504321CABECCF00AB695C /* kernel_symbols.c */; };
+		1CA504391CABECCF00AB695C /* kernel_symbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504331CABECCF00AB695C /* kernel_symbols.h */; };
+		1CA5043A1CABECCF00AB695C /* library_injector.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CA504341CABECCF00AB695C /* library_injector.c */; };
+		1CA5043B1CABECCF00AB695C /* library_injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504351CABECCF00AB695C /* library_injector.h */; };
+		1CA5043C1CABECCF00AB695C /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504361CABECCF00AB695C /* logging.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1C3E29451CABDB070041ED3D /* Infector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Infector.c; sourceTree = "<group>"; };
+		1C3E29461CABDB070041ED3D /* Infector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Infector.h; sourceTree = "<group>"; };
 		1C8855ED1C85B93B0089A8A4 /* Parasite.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parasite.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8855F01C85B93B0089A8A4 /* Parasite.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Parasite.c; sourceTree = "<group>"; };
 		1C8855F21C85B93B0089A8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CA504311CABECCF00AB695C /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		1CA504321CABECCF00AB695C /* kernel_symbols.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_symbols.c; sourceTree = "<group>"; };
+		1CA504331CABECCF00AB695C /* kernel_symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_symbols.h; sourceTree = "<group>"; };
+		1CA504341CABECCF00AB695C /* library_injector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = library_injector.c; sourceTree = "<group>"; };
+		1CA504351CABECCF00AB695C /* library_injector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = library_injector.h; sourceTree = "<group>"; };
+		1CA504361CABECCF00AB695C /* logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logging.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -27,6 +41,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C3E29661CABE9360041ED3D /* osxreverser */ = {
+			isa = PBXGroup;
+			children = (
+				1CA504311CABECCF00AB695C /* config.h */,
+				1CA504321CABECCF00AB695C /* kernel_symbols.c */,
+				1CA504331CABECCF00AB695C /* kernel_symbols.h */,
+				1CA504341CABECCF00AB695C /* library_injector.c */,
+				1CA504351CABECCF00AB695C /* library_injector.h */,
+				1CA504361CABECCF00AB695C /* logging.h */,
+			);
+			name = osxreverser;
+			sourceTree = "<group>";
+		};
 		1C8855E31C85B93B0089A8A4 = {
 			isa = PBXGroup;
 			children = (
@@ -46,6 +73,9 @@
 		1C8855EF1C85B93B0089A8A4 /* Parasite */ = {
 			isa = PBXGroup;
 			children = (
+				1C3E29661CABE9360041ED3D /* osxreverser */,
+				1C3E29451CABDB070041ED3D /* Infector.c */,
+				1C3E29461CABDB070041ED3D /* Infector.h */,
 				1C8855F01C85B93B0089A8A4 /* Parasite.c */,
 				1C8855F21C85B93B0089A8A4 /* Info.plist */,
 			);
@@ -59,6 +89,10 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA504371CABECCF00AB695C /* config.h in Headers */,
+				1CA5043B1CABECCF00AB695C /* library_injector.h in Headers */,
+				1CA5043C1CABECCF00AB695C /* logging.h in Headers */,
+				1CA504391CABECCF00AB695C /* kernel_symbols.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -73,6 +107,7 @@
 				1C8855E91C85B93B0089A8A4 /* Frameworks */,
 				1C8855EA1C85B93B0089A8A4 /* Headers */,
 				1C8855EB1C85B93B0089A8A4 /* Resources */,
+				1CDB279D1C9B3F4400E0318E /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -89,7 +124,7 @@
 		1C8855E41C85B93B0089A8A4 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Timm Kandziora";
 				TargetAttributes = {
 					1C8855EC1C85B93B0089A8A4 = {
@@ -125,11 +160,29 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1CDB279D1C9B3F4400E0318E /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export SUDO_ASKPASS=~/Desktop/print_password.sh\nsudo -A rm -rf /System/Library/Extensions/Parasite.kext\nsudo -A cp -R $BUILT_PRODUCTS_DIR/Parasite.kext /System/Library/Extensions/\nsudo -A chown -R root:wheel /System/Library/Extensions/Parasite.kext\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		1C8855E81C85B93B0089A8A4 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1CA5043A1CABECCF00AB695C /* library_injector.c in Sources */,
+				1CA504381CABECCF00AB695C /* kernel_symbols.c in Sources */,
 				1C8855F11C85B93B0089A8A4 /* Parasite.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -173,7 +226,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
@@ -210,7 +263,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
@@ -221,6 +274,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				MODULE_NAME = com.shinvou.Parasite;
 				MODULE_START = Parasite_start;
@@ -238,6 +292,7 @@
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Mac Developer";
+				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				MODULE_NAME = com.shinvou.Parasite;
 				MODULE_START = Parasite_start;
@@ -269,6 +324,7 @@
 				1C8855F71C85B93B0089A8A4 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
