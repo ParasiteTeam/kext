@@ -29,7 +29,7 @@ static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_actio
 {
     if (action == KAUTH_FILEOP_EXEC) {
         if (!kernel_symbols_solved) {
-            if (init_kernel_info()) return 0;
+            if (init_kernel_info()) return KAUTH_RESULT_DEFER;
             
             SOLVE_KERNEL_SYMBOL("_get_map_min", _get_map_min)
             SOLVE_KERNEL_SYMBOL("_get_task_map", _get_task_map)
