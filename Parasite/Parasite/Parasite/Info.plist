@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.apple.shinvou.parasite</string>
+	<string>com.shinvou.parasite</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -24,13 +24,15 @@
 	<string>Copyright © 2016 Timm Kandziora. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
-		<key>com.apple.kpi.mach</key>
-		<string>10.0.0</string>
-		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
 		<key>com.apple.kpi.bsd</key>
 		<string>10.0.0</string>
 		<key>com.apple.kpi.dsep</key>
+		<string>10.0.0</string>
+		<key>com.apple.kpi.libkern</key>
+		<string>10.0.0</string>
+		<key>com.apple.kpi.mach</key>
+		<string>10.0.0</string>
+		<key>com.apple.kpi.unsupported</key>
 		<string>10.0.0</string>
 	</dict>
 	<key>OSBundleRequired</key>

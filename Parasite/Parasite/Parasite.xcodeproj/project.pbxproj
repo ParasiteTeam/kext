@@ -172,7 +172,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export SUDO_ASKPASS=~/Desktop/print_password.sh\nsudo -A rm -rf /System/Library/Extensions/Parasite.kext\nsudo -A cp -R $BUILT_PRODUCTS_DIR/Parasite.kext /System/Library/Extensions/\nsudo -A chown -R root:wheel /System/Library/Extensions/Parasite.kext\n";
+			shellScript = "export SUDO_ASKPASS=~/Desktop/print_password.sh\nsudo -A rm -rf /Library/Extensions/Parasite.kext\nsudo -A cp -R $BUILT_PRODUCTS_DIR/Parasite.kext /Library/Extensions/\nsudo -A chown -R root:wheel /Library/Extensions/Parasite.kext\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -207,7 +207,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -250,7 +250,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "-";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -272,6 +272,8 @@
 		1C8855F61C85B93B0089A8A4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				MODULE_NAME = com.shinvou.Parasite;
@@ -288,6 +290,8 @@
 		1C8855F71C85B93B0089A8A4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				MODULE_NAME = com.shinvou.Parasite;

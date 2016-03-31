@@ -171,7 +171,7 @@ inject_library(vm_map_t task_port, mach_vm_address_t base_address, char *path, i
     uint32_t libpath_len = (uint32_t)strlen(library_to_inject) + 1;
     /* prepare the LC_LOAD_DYLIB command to be injected */
     struct dylib_command newlib_cmd = {0};
-    newlib_cmd.cmd = LC_LOAD_WEAK_DYLIB;
+    newlib_cmd.cmd = LC_LOAD_DYLIB;
     newlib_cmd.dylib.name.offset = 24;         // usually the name string is located just after the command
     newlib_cmd.dylib.timestamp = 0;
     newlib_cmd.dylib.current_version = 0;
