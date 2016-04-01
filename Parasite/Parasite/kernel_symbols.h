@@ -82,4 +82,6 @@ extern vm_map_offset_t (*_get_map_min)(vm_map_t);
 extern vm_map_t (*_get_task_map)(task_t);
 extern kern_return_t (*_mach_vm_region)(vm_map_t target_task, mach_vm_address_t *address, mach_vm_size_t *size, vm_region_flavor_t flavor, vm_region_info_t info, mach_msg_type_number_t *infoCnt, mach_port_t *object_name);
 
+#define SOLVE_KERNEL_SYMBOL(string, pointer) if (solve_kernel_symbol((string), (void**)&(pointer))) { printf("Can't solve kernel symbol %s", (string)); return KERN_FAILURE;}
+
 #endif

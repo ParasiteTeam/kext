@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C6804BD1CAE765B00F16543 /* ParasiteLoader.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */; };
 		1C8855F11C85B93B0089A8A4 /* Parasite.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C8855F01C85B93B0089A8A4 /* Parasite.c */; };
 		1CA504371CABECCF00AB695C /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504311CABECCF00AB695C /* config.h */; };
 		1CA504381CABECCF00AB695C /* kernel_symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CA504321CABECCF00AB695C /* kernel_symbols.c */; };
@@ -19,6 +20,7 @@
 /* Begin PBXFileReference section */
 		1C3E29451CABDB070041ED3D /* Infector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Infector.c; sourceTree = "<group>"; };
 		1C3E29461CABDB070041ED3D /* Infector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Infector.h; sourceTree = "<group>"; };
+		1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ParasiteLoader.dylib; sourceTree = "<group>"; };
 		1C8855ED1C85B93B0089A8A4 /* Parasite.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parasite.kext; sourceTree = BUILT_PRODUCTS_DIR; };
 		1C8855F01C85B93B0089A8A4 /* Parasite.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Parasite.c; sourceTree = "<group>"; };
 		1C8855F21C85B93B0089A8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -45,11 +47,11 @@
 			isa = PBXGroup;
 			children = (
 				1CA504311CABECCF00AB695C /* config.h */,
+				1CA504361CABECCF00AB695C /* logging.h */,
 				1CA504321CABECCF00AB695C /* kernel_symbols.c */,
 				1CA504331CABECCF00AB695C /* kernel_symbols.h */,
 				1CA504341CABECCF00AB695C /* library_injector.c */,
 				1CA504351CABECCF00AB695C /* library_injector.h */,
-				1CA504361CABECCF00AB695C /* logging.h */,
 			);
 			name = osxreverser;
 			sourceTree = "<group>";
@@ -78,6 +80,7 @@
 				1C3E29461CABDB070041ED3D /* Infector.h */,
 				1C8855F01C85B93B0089A8A4 /* Parasite.c */,
 				1C8855F21C85B93B0089A8A4 /* Info.plist */,
+				1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */,
 			);
 			path = Parasite;
 			sourceTree = "<group>";
@@ -155,6 +158,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1C6804BD1CAE765B00F16543 /* ParasiteLoader.dylib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,6 +280,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parasite",
+				);
 				MODULE_NAME = com.shinvou.Parasite;
 				MODULE_START = Parasite_start;
 				MODULE_STOP = Parasite_stop;
@@ -294,6 +302,10 @@
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
 				INFOPLIST_FILE = Parasite/Info.plist;
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Parasite",
+				);
 				MODULE_NAME = com.shinvou.Parasite;
 				MODULE_START = Parasite_start;
 				MODULE_STOP = Parasite_stop;

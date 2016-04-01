@@ -185,7 +185,11 @@ inject_library(vm_map_t task_port, mach_vm_address_t base_address, char *path, i
     }
     if (header_info.free_space < newlib_cmd.cmdsize)
     {
+        /* 
+         Sometimes we don't have enough space in the header for binary x, even if we had before
+         */
         LOG_ERROR("Not enough space to inject library at %s!", path);
+        goto failure;
     }
     else
     {

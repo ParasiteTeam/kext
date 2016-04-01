@@ -48,6 +48,6 @@
 #define mario_config_h
 
 #define MACH_KERNEL       "/System/Library/Kernels/kernel"                      /* kernel file location */
-#define PATCH_LIBRARY     "/Users/shinvou/Desktop/libFuckThisBlueDot.dylib"    /* location of the patching library to inject */
+#define PATCH_LIBRARY     "/Library/Extensions/Parasite.kext/Contents/Resources/ParasiteLoader.dylib"    /* location of the patching library to inject */
 
 #endif
