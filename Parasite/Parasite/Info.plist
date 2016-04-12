@@ -7,7 +7,7 @@
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.shinvou.parasite</string>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -20,16 +20,40 @@
 	<string>????</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>IOKitPersonalities</key>
+	<dict>
+		<key>PARASITE</key>
+		<dict>
+			<key>CFBundleIdentifier</key>
+			<string>com.shinvou.driver.$(PRODUCT_NAME:rfc1034identifier)</string>
+			<key>IOClass</key>
+			<string>com_shinvou_driver_Parasite</string>
+			<key>IOKitDebug</key>
+			<integer>0</integer>
+			<key>IOMatchCategory</key>
+			<string>com_shinvou_driver_Parasite</string>
+			<key>IOProviderClass</key>
+			<string>IOResources</string>
+			<key>IOResourceMatch</key>
+			<string>IOBSD</string>
+		</dict>
+	</dict>
 	<key>NSHumanReadableCopyright</key>
 	<string>Copyright © 2016 Timm Kandziora. All rights reserved.</string>
 	<key>OSBundleLibraries</key>
 	<dict>
 		<key>com.apple.kpi.bsd</key>
-		<string>10.0.0</string>
+		<string>14.0</string>
+		<key>com.apple.kpi.dsep</key>
+		<string>14.0</string>
+		<key>com.apple.kpi.iokit</key>
+		<string>14.0</string>
 		<key>com.apple.kpi.libkern</key>
-		<string>10.0.0</string>
+		<string>14.0</string>
 		<key>com.apple.kpi.mach</key>
-		<string>10.0.0</string>
+		<string>14.0</string>
+		<key>com.apple.kpi.unsupported</key>
+		<string>14.0</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Root</string>

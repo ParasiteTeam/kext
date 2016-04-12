@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "1C8855EC1C85B93B0089A8A4"
+               BlueprintIdentifier = "1C906F871CBB01FA00B47299"
                BuildableName = "Parasite.kext"
                BlueprintName = "Parasite"
                ReferencedContainer = "container:Parasite.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C8855EC1C85B93B0089A8A4"
+            BlueprintIdentifier = "1C906F871CBB01FA00B47299"
             BuildableName = "Parasite.kext"
             BlueprintName = "Parasite"
             ReferencedContainer = "container:Parasite.xcodeproj">
@@ -63,7 +63,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "1C8855EC1C85B93B0089A8A4"
+            BlueprintIdentifier = "1C906F871CBB01FA00B47299"
             BuildableName = "Parasite.kext"
             BlueprintName = "Parasite"
             ReferencedContainer = "container:Parasite.xcodeproj">

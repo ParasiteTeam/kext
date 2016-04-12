@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1C6804BD1CAE765B00F16543 /* ParasiteLoader.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */; };
-		1C8855F11C85B93B0089A8A4 /* Parasite.c in Sources */ = {isa = PBXBuildFile; fileRef = 1C8855F01C85B93B0089A8A4 /* Parasite.c */; };
-		1CA504371CABECCF00AB695C /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504311CABECCF00AB695C /* config.h */; };
-		1CA504381CABECCF00AB695C /* kernel_symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CA504321CABECCF00AB695C /* kernel_symbols.c */; };
-		1CA504391CABECCF00AB695C /* kernel_symbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504331CABECCF00AB695C /* kernel_symbols.h */; };
-		1CA5043A1CABECCF00AB695C /* library_injector.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CA504341CABECCF00AB695C /* library_injector.c */; };
-		1CA5043B1CABECCF00AB695C /* library_injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504351CABECCF00AB695C /* library_injector.h */; };
-		1CA5043C1CABECCF00AB695C /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CA504361CABECCF00AB695C /* logging.h */; };
+		1C29A6151CBDB5A000AB7E73 /* ParasiteLoader.dylib in Resources */ = {isa = PBXBuildFile; fileRef = 1C29A6131CBDB59800AB7E73 /* ParasiteLoader.dylib */; };
+		1C906F8C1CBB01FA00B47299 /* Parasite.hpp in Headers */ = {isa = PBXBuildFile; fileRef = 1C906F8B1CBB01FA00B47299 /* Parasite.hpp */; };
+		1C906F8E1CBB01FA00B47299 /* Parasite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1C906F8D1CBB01FA00B47299 /* Parasite.cpp */; };
+		1CF0A1041CBBAA9700AFF2D5 /* config.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF0A0FE1CBBAA9700AFF2D5 /* config.h */; };
+		1CF0A1051CBBAA9700AFF2D5 /* kernel_symbols.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0A0FF1CBBAA9700AFF2D5 /* kernel_symbols.c */; };
+		1CF0A1061CBBAA9700AFF2D5 /* kernel_symbols.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF0A1001CBBAA9700AFF2D5 /* kernel_symbols.h */; };
+		1CF0A1071CBBAA9700AFF2D5 /* library_injector.c in Sources */ = {isa = PBXBuildFile; fileRef = 1CF0A1011CBBAA9700AFF2D5 /* library_injector.c */; };
+		1CF0A1081CBBAA9700AFF2D5 /* library_injector.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF0A1021CBBAA9700AFF2D5 /* library_injector.h */; };
+		1CF0A1091CBBAA9700AFF2D5 /* logging.h in Headers */ = {isa = PBXBuildFile; fileRef = 1CF0A1031CBBAA9700AFF2D5 /* logging.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1C3E29451CABDB070041ED3D /* Infector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Infector.c; sourceTree = "<group>"; };
-		1C3E29461CABDB070041ED3D /* Infector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Infector.h; sourceTree = "<group>"; };
-		1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ParasiteLoader.dylib; sourceTree = "<group>"; };
-		1C8855ED1C85B93B0089A8A4 /* Parasite.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parasite.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		1C8855F01C85B93B0089A8A4 /* Parasite.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = Parasite.c; sourceTree = "<group>"; };
-		1C8855F21C85B93B0089A8A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CA504311CABECCF00AB695C /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
-		1CA504321CABECCF00AB695C /* kernel_symbols.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_symbols.c; sourceTree = "<group>"; };
-		1CA504331CABECCF00AB695C /* kernel_symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_symbols.h; sourceTree = "<group>"; };
-		1CA504341CABECCF00AB695C /* library_injector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = library_injector.c; sourceTree = "<group>"; };
-		1CA504351CABECCF00AB695C /* library_injector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = library_injector.h; sourceTree = "<group>"; };
-		1CA504361CABECCF00AB695C /* logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logging.h; sourceTree = "<group>"; };
+		1C29A6131CBDB59800AB7E73 /* ParasiteLoader.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = ParasiteLoader.dylib; sourceTree = "<group>"; };
+		1C906F881CBB01FA00B47299 /* Parasite.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Parasite.kext; sourceTree = BUILT_PRODUCTS_DIR; };
+		1C906F8B1CBB01FA00B47299 /* Parasite.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Parasite.hpp; sourceTree = "<group>"; };
+		1C906F8D1CBB01FA00B47299 /* Parasite.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Parasite.cpp; sourceTree = "<group>"; };
+		1C906F8F1CBB01FA00B47299 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CF0A0FE1CBBAA9700AFF2D5 /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		1CF0A0FF1CBBAA9700AFF2D5 /* kernel_symbols.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kernel_symbols.c; sourceTree = "<group>"; };
+		1CF0A1001CBBAA9700AFF2D5 /* kernel_symbols.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = kernel_symbols.h; sourceTree = "<group>"; };
+		1CF0A1011CBBAA9700AFF2D5 /* library_injector.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = library_injector.c; sourceTree = "<group>"; };
+		1CF0A1021CBBAA9700AFF2D5 /* library_injector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = library_injector.h; sourceTree = "<group>"; };
+		1CF0A1031CBBAA9700AFF2D5 /* logging.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logging.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1C8855E91C85B93B0089A8A4 /* Frameworks */ = {
+		1C906F841CBB01FA00B47299 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -43,74 +43,74 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1C3E29661CABE9360041ED3D /* osxreverser */ = {
+		1C906F7E1CBB01FA00B47299 = {
 			isa = PBXGroup;
 			children = (
-				1CA504311CABECCF00AB695C /* config.h */,
-				1CA504361CABECCF00AB695C /* logging.h */,
-				1CA504321CABECCF00AB695C /* kernel_symbols.c */,
-				1CA504331CABECCF00AB695C /* kernel_symbols.h */,
-				1CA504341CABECCF00AB695C /* library_injector.c */,
-				1CA504351CABECCF00AB695C /* library_injector.h */,
-			);
-			name = osxreverser;
-			sourceTree = "<group>";
-		};
-		1C8855E31C85B93B0089A8A4 = {
-			isa = PBXGroup;
-			children = (
-				1C8855EF1C85B93B0089A8A4 /* Parasite */,
-				1C8855EE1C85B93B0089A8A4 /* Products */,
+				1C906F8A1CBB01FA00B47299 /* Parasite */,
+				1C906F891CBB01FA00B47299 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1C8855EE1C85B93B0089A8A4 /* Products */ = {
+		1C906F891CBB01FA00B47299 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1C8855ED1C85B93B0089A8A4 /* Parasite.kext */,
+				1C906F881CBB01FA00B47299 /* Parasite.kext */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1C8855EF1C85B93B0089A8A4 /* Parasite */ = {
+		1C906F8A1CBB01FA00B47299 /* Parasite */ = {
 			isa = PBXGroup;
 			children = (
-				1C3E29661CABE9360041ED3D /* osxreverser */,
-				1C3E29451CABDB070041ED3D /* Infector.c */,
-				1C3E29461CABDB070041ED3D /* Infector.h */,
-				1C8855F01C85B93B0089A8A4 /* Parasite.c */,
-				1C8855F21C85B93B0089A8A4 /* Info.plist */,
-				1C6804BB1CAE764100F16543 /* ParasiteLoader.dylib */,
+				1CF0A10A1CBBAA9F00AFF2D5 /* osxreverser */,
+				1C906F8B1CBB01FA00B47299 /* Parasite.hpp */,
+				1C906F8D1CBB01FA00B47299 /* Parasite.cpp */,
+				1C906F8F1CBB01FA00B47299 /* Info.plist */,
+				1C29A6131CBDB59800AB7E73 /* ParasiteLoader.dylib */,
 			);
 			path = Parasite;
+			sourceTree = "<group>";
+		};
+		1CF0A10A1CBBAA9F00AFF2D5 /* osxreverser */ = {
+			isa = PBXGroup;
+			children = (
+				1CF0A0FE1CBBAA9700AFF2D5 /* config.h */,
+				1CF0A1031CBBAA9700AFF2D5 /* logging.h */,
+				1CF0A0FF1CBBAA9700AFF2D5 /* kernel_symbols.c */,
+				1CF0A1001CBBAA9700AFF2D5 /* kernel_symbols.h */,
+				1CF0A1011CBBAA9700AFF2D5 /* library_injector.c */,
+				1CF0A1021CBBAA9700AFF2D5 /* library_injector.h */,
+			);
+			name = osxreverser;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		1C8855EA1C85B93B0089A8A4 /* Headers */ = {
+		1C906F851CBB01FA00B47299 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA504371CABECCF00AB695C /* config.h in Headers */,
-				1CA5043B1CABECCF00AB695C /* library_injector.h in Headers */,
-				1CA5043C1CABECCF00AB695C /* logging.h in Headers */,
-				1CA504391CABECCF00AB695C /* kernel_symbols.h in Headers */,
+				1CF0A1061CBBAA9700AFF2D5 /* kernel_symbols.h in Headers */,
+				1CF0A1041CBBAA9700AFF2D5 /* config.h in Headers */,
+				1CF0A1081CBBAA9700AFF2D5 /* library_injector.h in Headers */,
+				1CF0A1091CBBAA9700AFF2D5 /* logging.h in Headers */,
+				1C906F8C1CBB01FA00B47299 /* Parasite.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		1C8855EC1C85B93B0089A8A4 /* Parasite */ = {
+		1C906F871CBB01FA00B47299 /* Parasite */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1C8855F51C85B93B0089A8A4 /* Build configuration list for PBXNativeTarget "Parasite" */;
+			buildConfigurationList = 1C906F921CBB01FA00B47299 /* Build configuration list for PBXNativeTarget "Parasite" */;
 			buildPhases = (
-				1C8855E81C85B93B0089A8A4 /* Sources */,
-				1C8855E91C85B93B0089A8A4 /* Frameworks */,
-				1C8855EA1C85B93B0089A8A4 /* Headers */,
-				1C8855EB1C85B93B0089A8A4 /* Resources */,
-				1CDB279D1C9B3F4400E0318E /* ShellScript */,
+				1C906F831CBB01FA00B47299 /* Sources */,
+				1C906F841CBB01FA00B47299 /* Frameworks */,
+				1C906F851CBB01FA00B47299 /* Headers */,
+				1C906F861CBB01FA00B47299 /* Resources */,
+				1C79BDC71CBB0FC700C04D0A /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -118,54 +118,53 @@
 			);
 			name = Parasite;
 			productName = Parasite;
-			productReference = 1C8855ED1C85B93B0089A8A4 /* Parasite.kext */;
+			productReference = 1C906F881CBB01FA00B47299 /* Parasite.kext */;
 			productType = "com.apple.product-type.kernel-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1C8855E41C85B93B0089A8A4 /* Project object */ = {
+		1C906F7F1CBB01FA00B47299 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Timm Kandziora";
 				TargetAttributes = {
-					1C8855EC1C85B93B0089A8A4 = {
-						CreatedOnToolsVersion = 7.2.1;
-						DevelopmentTeam = N8YZB43954;
+					1C906F871CBB01FA00B47299 = {
+						CreatedOnToolsVersion = 7.3;
 					};
 				};
 			};
-			buildConfigurationList = 1C8855E71C85B93B0089A8A4 /* Build configuration list for PBXProject "Parasite" */;
+			buildConfigurationList = 1C906F821CBB01FA00B47299 /* Build configuration list for PBXProject "Parasite" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
 			);
-			mainGroup = 1C8855E31C85B93B0089A8A4;
-			productRefGroup = 1C8855EE1C85B93B0089A8A4 /* Products */;
+			mainGroup = 1C906F7E1CBB01FA00B47299;
+			productRefGroup = 1C906F891CBB01FA00B47299 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1C8855EC1C85B93B0089A8A4 /* Parasite */,
+				1C906F871CBB01FA00B47299 /* Parasite */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1C8855EB1C85B93B0089A8A4 /* Resources */ = {
+		1C906F861CBB01FA00B47299 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1C6804BD1CAE765B00F16543 /* ParasiteLoader.dylib in Resources */,
+				1C29A6151CBDB5A000AB7E73 /* ParasiteLoader.dylib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		1CDB279D1C9B3F4400E0318E /* ShellScript */ = {
+		1C79BDC71CBB0FC700C04D0A /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -176,28 +175,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export SUDO_ASKPASS=~/Desktop/print_password.sh\nsudo -A rm -rf /Library/Extensions/Parasite.kext\nsudo -A cp -R $BUILT_PRODUCTS_DIR/Parasite.kext /Library/Extensions/\nsudo -A chown -R root:wheel /Library/Extensions/Parasite.kext\n";
+			shellScript = "export SUDO_ASKPASS=~/Desktop/print_password.sh\nsudo -A rm -rf /Library/Extensions/Parasite.kext\nsudo -A cp -R $BUILT_PRODUCTS_DIR/Parasite.kext /Library/Extensions/\nsudo -A chown -R root:wheel /Library/Extensions/Parasite.kext";
 		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1C8855E81C85B93B0089A8A4 /* Sources */ = {
+		1C906F831CBB01FA00B47299 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA5043A1CABECCF00AB695C /* library_injector.c in Sources */,
-				1CA504381CABECCF00AB695C /* kernel_symbols.c in Sources */,
-				1C8855F11C85B93B0089A8A4 /* Parasite.c in Sources */,
+				1CF0A1071CBBAA9700AFF2D5 /* library_injector.c in Sources */,
+				1CF0A1051CBBAA9700AFF2D5 /* kernel_symbols.c in Sources */,
+				1C906F8E1CBB01FA00B47299 /* Parasite.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		1C8855F31C85B93B0089A8A4 /* Debug */ = {
+		1C906F901CBB01FA00B47299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -211,7 +211,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -230,17 +230,18 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		1C8855F41C85B93B0089A8A4 /* Release */ = {
+		1C906F911CBB01FA00B47299 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -254,7 +255,7 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -267,52 +268,50 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 			};
 			name = Release;
 		};
-		1C8855F61C85B93B0089A8A4 /* Debug */ = {
+		1C906F931CBB01FA00B47299 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Parasite",
 				);
-				MODULE_NAME = com.shinvou.Parasite;
+				MODULE_NAME = com.shinvou.kext.Parasite;
 				MODULE_START = Parasite_start;
 				MODULE_STOP = Parasite_stop;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shinvou.Parasite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinvou.driver.Parasite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Debug;
 		};
-		1C8855F71C85B93B0089A8A4 /* Release */ = {
+		1C906F941CBB01FA00B47299 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "";
 				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1.0.0d1;
 				INFOPLIST_FILE = Parasite/Info.plist;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Parasite",
 				);
-				MODULE_NAME = com.shinvou.Parasite;
+				MODULE_NAME = com.shinvou.kext.Parasite;
 				MODULE_START = Parasite_start;
 				MODULE_STOP = Parasite_stop;
 				MODULE_VERSION = 1.0.0d1;
-				PRODUCT_BUNDLE_IDENTIFIER = com.shinvou.Parasite;
+				PRODUCT_BUNDLE_IDENTIFIER = com.shinvou.driver.Parasite;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = kext;
 			};
 			name = Release;
@@ -320,25 +319,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1C8855E71C85B93B0089A8A4 /* Build configuration list for PBXProject "Parasite" */ = {
+		1C906F821CBB01FA00B47299 /* Build configuration list for PBXProject "Parasite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C8855F31C85B93B0089A8A4 /* Debug */,
-				1C8855F41C85B93B0089A8A4 /* Release */,
+				1C906F901CBB01FA00B47299 /* Debug */,
+				1C906F911CBB01FA00B47299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1C8855F51C85B93B0089A8A4 /* Build configuration list for PBXNativeTarget "Parasite" */ = {
+		1C906F921CBB01FA00B47299 /* Build configuration list for PBXNativeTarget "Parasite" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1C8855F61C85B93B0089A8A4 /* Debug */,
-				1C8855F71C85B93B0089A8A4 /* Release */,
+				1C906F931CBB01FA00B47299 /* Debug */,
+				1C906F941CBB01FA00B47299 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 1C8855E41C85B93B0089A8A4 /* Project object */;
+	rootObject = 1C906F7F1CBB01FA00B47299 /* Project object */;
 }
